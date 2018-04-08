@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排序</title>
+</head>
+<body>
+
+<script>
+    var arr = [5,2,9,45,12,32];
+    document.write(arr);
+    var arrReverse = arr.reverse();
+    alert(arrReverse);
+
+    var fn = arr.sort(function(a,b){
+        return a - b;
+    });
+    console.log(fn);
+
+    function NumAscSort(a,b){
+        return a - b;
+    }
+
+    function NumDescSort(a,b){
+        return b - a;
+    }
+
+    arr.sort(NumAscSort);
+    alert(arr);
+
+    arr.sort(NumDescSort);
+    alert(arr);
+
+</script>
+
+</body>
+</html>

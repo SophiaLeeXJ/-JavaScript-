@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+<script>
+
+    //实现思路：如果当前数组的第i项第一次出现的位置不是i，那么表示第i项是重复的，忽略掉，否则存入结果数组中
+
+    var arr = ['a','g','a','c','b','c'];
+    console.log(arr);
+
+    function fn(array){
+        var len = array.length;
+        var newarray = []; //结果数组
+        for(var i=0; i<len; i++){
+            if(array.indexOf(array[i]) === i){
+                newarray.push(array[i]);
+            }
+        }
+        console.log(newarray);
+        return newarray;
+    }
+
+    fn(arr);
+
+</script>
+</body>
+</html>

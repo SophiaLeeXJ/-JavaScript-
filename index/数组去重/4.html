@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重splice方法练习</title>
+</head>
+<body>
+
+<script>
+
+    //实现思路：获取没重复的最右一值放入新数组（检测到有重复值时终止当前循环，同时进入顶层循环的下一轮判断）
+
+    var arr = ['a','g','a','c','b','c'];
+    console.log(arr);
+    function unique(a){
+        var n = [];
+        var len = a.length;
+
+        for(var i=0; i<len; i++){
+            for(var j=i+1; j<len; j++){
+                if(a[i] === a[j]){
+                    j = ++i;
+                }
+            }
+            n.push(a[i]);
+        }
+        console.log(n);
+        return n;
+    }
+
+    unique(arr);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改"for循环与定时器"代码输出</title>
+</head>
+<body>
+
+<script>
+    //方法一
+    console.log('--------方法一--------');
+    var output = function(i){
+        setTimeout(function(){
+            console.log(new Date, i);
+        },1000);
+    };
+    for(var i=0; i<5; i++){
+        output(i);
+    }
+
+    //方法二
+    for(var i=0; i<5; i++){
+        (function(j){ //j=i
+            setTimeout(function(){
+                console.log( new Date, j );
+            },1000);
+        })(i);
+    }
+    //console.log(new Date, i);
+
+    //方法三
+    for(let i=0; i<5; i++){
+        setTimeout(function(){
+            console.log(new Date, i);
+        },1000);
+    }
+</script>
+
+</body>
+</html>

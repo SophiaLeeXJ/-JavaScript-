@@ -1,0 +1,41 @@
+/*Created By Elizabeth on 2018/03/07*/
+
+body, html, div, img, button, input, a, table, th, td, tr, ul, li, ol, p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.box {
+    text-align: center;
+}
+
+.box img {
+    width: 500px;
+    border: 1px solid #000;
+}
+
+.box p  {
+    text-align: center;
+}
+
+.box p .btn {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    padding: 0 10px;
+    color: #333;
+    border: 1px solid #999;
+}
+
+.box p a:first-child {
+    margin-right: 30px;
+}
+
+.box p .btn:hover {
+    background: #ccc;
+}

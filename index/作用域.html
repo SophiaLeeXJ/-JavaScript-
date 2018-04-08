@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+
+<script>
+    console.log(a); //函数a
+    a(); //10
+    var a = 3;
+    function a(){
+        alert(10);
+    }
+    alert(a); //3
+    a = 6;
+    a(); //报错
+</script>
+
+</body>
+</html>

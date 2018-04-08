@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+
+<script>
+    function addNum(){
+        var num = 2;
+        var newNum = function(){
+            alert(num);
+        };
+        num ++;
+        return newNum;
+    }
+    var newNum = addNum();
+    newNum(); //3
+
+//    解释：
+//    执行addNum()后，addNum()闭包内部变量会存在，而闭包内部函数的内部变量不会存在，使得JavaScript
+//    的垃圾回收机制GC不会收回addNum()所占用的资源，因为addNum()的内部函数的执行需要依赖addNum()中的变量。
+</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+/*Created By Elizabeth on 2017/12/24*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+.active {
+    background: rgba(255,255,255,.3);
+}
+.hide {
+    display: none;
+}
+
+.wrap {
+    position: relative;
+    width: 200px;
+    height: 448px;
+    background: #6e6568;
+    padding: 15px 0;
+}
+.wrap li {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 12px;
+    color: #fff;
+}
+
+.wrap li a {
+    color: #fff;
+}
+.wrap li a:hover, #submenu a:hover {
+    color: #e01222;
+}
+
+.clearfix {
+    /*clear: both;*/
+}
+
+#submenu {
+    position: absolute;
+    top: 0;
+    left: 201px;
+    width: 800px;
+    height: 476px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 2px 3px #ccc;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#submenu .cate_channel a {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    background: #6e6568;
+    color: #fff;
+    padding: 0 10px;
+    margin-right: 10px;
+}
+#submenu .cate_detail {
+    padding: 10px 0;
+}
+#submenu .cate_detail dl {
+    overflow: hidden;
+}
+#submenu .cate_detail dt {
+    font-weight: 700;
+    float: left;
+    width: 70px;
+    clear: both;
+    position: relative;
+}
+#submenu .cate_detail dd {
+    float: left;
+    padding: 6px 0;
+    border-top: 1px solid #eee;
+    margin: 0 0 5px 5px;
+}
+.cate_detail a {
+    height: 16px;
+    line-height: 16px;
+    color: #666;
+    white-space:nowrap;
+    border-left: 1px solid #e0e0e0;
+    padding: 0 8px;
+    margin: 4px 0;
+}

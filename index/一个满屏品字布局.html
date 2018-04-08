@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一个满屏品字布局</title>
+    <style>
+
+        /*方法一
+        body, html, div {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            height: 100%;
+        }
+        .wrapper {
+            height: 100%;
+        }
+        .header {
+            height: 50%;
+            width: 50%;
+            margin: 0 auto;
+            background: green;
+        }
+        .footer {
+            height: 50%;
+            width: 100%;
+        }
+        .footer .left {
+            float: left;
+            height: 100%;
+            width: 50%;
+            background: pink;
+         }
+        .footer .right {
+            float: left;
+            width: 50%;
+            height: 100%;
+            background: lightseagreen;
+        }
+        */
+
+        /*方法二*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        .header {
+            width: 50%;
+            height: 50%;
+            box-sizing: border-box;
+            border: 2px solid red;
+            margin: 0 auto;
+        }
+        .footer {
+            width: 100%;
+            height: 50%;
+            position: relative;
+        }
+        .footer .left, .footer .right {
+            position: absolute;
+            box-sizing: border-box;
+            border: 2px solid red;
+            width: 50%;
+            height: 100%;
+        }
+        .footer .left {
+            left: 0;
+        }
+        .footer .right {
+            right: 0;
+        }
+
+        /*方法三
+        .main {
+            position: fixed;  !*此步解决元素相对窗口的定位问题*!
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .wrapper-up {
+            height: 50%;
+        }
+
+        .wrapper-down {
+            height: 50%;
+            position: relative;
+        }
+        .div-square-up {
+            width: 50%;
+            margin: 0 auto;
+            border: 2px solid red;
+            height: 96%;
+            box-sizing: border-box;
+        }
+
+        .div-square-left {
+            position: absolute;  !*此步解决元素左右定位问题*!
+            left: 0;
+            width: 48%;
+            height: 100%;
+            box-sizing: border-box;
+            border: 2px solid red;
+        }
+
+        .div-square-right {
+            position: absolute;   !*此步解决元素左右定位问题*!
+            right: 0;
+            width: 48%;
+            height: 100%;
+            border: 2px solid red;
+            box-sizing: border-box;
+        }*/
+
+
+    </style>
+</head>
+<body>
+
+<!--方法一-->
+<!--<div class="wrapper">-->
+    <!--<div class="header">-->
+        <!--<div class="top">TOP</div>-->
+    <!--</div>-->
+    <!--<div class="footer">-->
+        <!--<div class="left">Left</div>-->
+        <!--<div class="right">Right</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+<div class="wrap">
+    <div class="header">
+        <div class="top"></div>
+    </div>
+    <div class="footer">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</div>
+
+<!--方法三-->
+<!--<div class="main">-->
+    <!--<div class="wrapper-up">-->
+        <!--<div class="div-square-up"></div>-->
+    <!--</div>-->
+    <!--<div class="wrapper-down">-->
+        <!--<div class="div-square-left"></div>-->
+        <!--<div class="div-square-right"></div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+<script>
+    console.log(document.documentElement.clientWidth);
+    console.log(document.documentElement.clientHeight);
+</script>
+
+
+</body>
+</html>

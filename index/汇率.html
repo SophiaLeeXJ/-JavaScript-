@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="../js/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            type          : 'get',
+            async         : false,
+            url           : 'http://api.k780.com/?app=finance.rate&scur=USD&tcur=CNY&appkey=APPKEY&sign=SIGN&format=json&jsoncallback=data',
+            dataType      : 'jsonp',
+            jsonp         : 'callback',
+            jsonpCallback : 'data',
+            success       : function(data){
+                if(data.success !== '1'){
+                    alert(data.msgid+' '+data.msg);
+                }
+                //遍历
+                var description = "";
+                for(var i in data.result){
+                    var property=data.result[i];
+                    description+=i+" = "+property+"\n";
+                }
+                alert(description);
+            },
+            error:function(){
+                alert('fail');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

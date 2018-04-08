@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深拷贝</title>
+</head>
+<body>
+
+<script>
+
+    //解释：使用递归来拷贝深层对象
+
+    var obj = {a: {b: 10}};
+    function deepcopy(obj){
+        if( typeof obj !== 'object' ){
+            return obj;
+        }
+        var newobj = {};
+        for(var attr in obj){
+            newobj[attr] = deepcopy(obj[attr]);
+        }
+        return newobj;
+    }
+    var obj2 = deepcopy(obj);
+    obj2.a.b = 20;
+    alert(obj.a.b); //10
+</script>
+
+</body>
+</html>
